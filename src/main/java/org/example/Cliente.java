@@ -5,7 +5,7 @@ public class Cliente {
 
     private String address, fullName;
     private int dni, phoneNumber, age;
-    boolean workStatu, financedCar, cashCar;
+    boolean workStatu;
 
     public Cliente(int dni, String fullName) {
         this.dni = dni;
