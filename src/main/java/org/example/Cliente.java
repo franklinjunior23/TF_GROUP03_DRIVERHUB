@@ -24,7 +24,7 @@ public class Cliente {
     @Override
 
     public String toString() {
-        return "the client's phone number is: "+ phoneNumber;
+        return "the client's phone number is : "+ phoneNumber;
     }
 
 }
