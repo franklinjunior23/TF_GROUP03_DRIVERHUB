@@ -1,23 +1,31 @@
 package org.example;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.io.InputStreamReader;
+import java.io.IOException;
+import java.util.List;
+
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-       
-        System.out.printf("new Hello in gitHun");
+        List<Car> cars = loadCarsFromFile("cars-data.json");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-            
-            System.out.println("testd");
-            
-            System.out.println("ahora si prueba 2.220");
+        Menu menu = new Menu(cars);
+        menu.startApplication();
+    }
+    // Method to load cars from the JSON file (in resources)
+    private static List<Car> loadCarsFromFile(String fileName) {
+        try (InputStreamReader reader = new InputStreamReader(Menu.class.getClassLoader().getResourceAsStream(fileName))) {
+            // Create a Gson object to parse the JSON
+            Gson gson = new Gson();
+            // Define the type of list to be deserialized
+            return gson.fromJson(reader, new TypeToken<List<Car>>(){}.getType());
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
         }
     }
+
 }

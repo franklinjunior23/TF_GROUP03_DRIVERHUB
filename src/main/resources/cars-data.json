@@ -1,0 +1,82 @@
+[
+  {
+    "brand": "Toyota",
+    "model": "Corolla",
+    "year": 2020,
+    "price": 20000,
+    "color": "Red",
+    "stock": 5
+  },
+  {
+    "brand": "Honda",
+    "model": "Civic",
+    "year": 2021,
+    "price": 22000,
+    "color": "Blue",
+    "stock": 3
+  },
+  {
+    "brand": "Ford",
+    "model": "Focus",
+    "year": 2022,
+    "price": 25000,
+    "color": "Black",
+    "stock": 0
+  },
+  {
+    "brand": "Chevrolet",
+    "model": "Malibu",
+    "year": 2021,
+    "price": 24000,
+    "color": "White",
+    "stock": 7
+  },
+  {
+    "brand": "BMW",
+    "model": "320i",
+    "year": 2022,
+    "price": 35000,
+    "color": "Gray",
+    "stock": 2
+  },
+  {
+    "brand": "Audi",
+    "model": "A4",
+    "year": 2023,
+    "price": 40000,
+    "color": "Silver",
+    "stock": 1
+  },
+  {
+    "brand": "Mercedes-Benz",
+    "model": "C-Class",
+    "year": 2022,
+    "price": 45000,
+    "color": "Black",
+    "stock": 4
+  },
+  {
+    "brand": "Volkswagen",
+    "model": "Jetta",
+    "year": 2021,
+    "price": 21000,
+    "color": "Yellow",
+    "stock": 8
+  },
+  {
+    "brand": "Nissan",
+    "model": "Altima",
+    "year": 2021,
+    "price": 22000,
+    "color": "Green",
+    "stock": 3
+  },
+  {
+    "brand": "Mazda",
+    "model": "Mazda 3",
+    "year": 2020,
+    "price": 19000,
+    "color": "Red",
+    "stock": 6
+  }
+]
