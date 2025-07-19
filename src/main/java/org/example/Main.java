@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        // entrada y salida datos del comprador
+        // Costumer data
         Scanner sc = new Scanner(System.in);
         Comprador comprador = new Comprador();
         int option4=1;
@@ -23,7 +23,6 @@ public class Main {
 
         }while(option4==1);
 
-        //fin de datos del comprador
 
 
 
