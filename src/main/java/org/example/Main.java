@@ -13,11 +13,11 @@ public class Main {
     public static void main(String[] args) {
         // Costumer data
         Scanner sc = new Scanner(System.in);
-        Comprador comprador = new Comprador();
+        Costumer costumer = new Costumer();
         int option4=1;
         do{
-            comprador.menuComprador();
-            comprador.opcionesMenu();
+            costumer.menuComprador();
+            costumer.opcionesMenu();
             System.out.println("Desea regresar al menu principal del cliente\n1. Si.\n2. No.");
             option4 =Integer.parseInt(sc.nextLine());
 
