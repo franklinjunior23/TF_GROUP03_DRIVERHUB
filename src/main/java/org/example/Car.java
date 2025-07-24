@@ -17,6 +17,14 @@ public class Car {
         System.out.println(brand + " - " + model);
     }
 
+    public String getModel() {
+        return model;
+    }
+
+    public void decreaseStock (){
+        this.stock -= 1;
+    }
+
     // Constructor to initialize a Car
     public Car(String brand, String model, int year, double price, String color, int stock) {
         this.brand = brand;
@@ -27,16 +35,15 @@ public class Car {
         this.stock = stock;
     }
 
-
     // Method to display the car's information
     public void showInfo() {
         System.out.println("-------------------");
-        System.out.println("Brand: " + brand);
-        System.out.println("Model: " + model);
-        System.out.println("Year: " + year);
-        System.out.println("Price: $" + price);
+        System.out.println("Marca: " + brand);
+        System.out.println("Modelo: " + model);
+        System.out.println("Año: " + year);
+        System.out.println("Precio: $" + price);
         System.out.println("Color: " + color);
-        System.out.println("Stock available: " + stock);
+        System.out.println("Stock disponible: " + stock);
         System.out.println("-------------------");
     }
 }

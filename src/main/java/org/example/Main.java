@@ -12,36 +12,22 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         // Costumer data
-        Scanner sc = new Scanner(System.in);
-        Costumer costumer = new Costumer();
-        int option4=1;
-        do{
-            costumer.menuComprador();
-            costumer.opcionesMenu();
-            System.out.println("Desea regresar al menu principal del cliente\n1. Si.\n2. No.");
-            option4 =Integer.parseInt(sc.nextLine());
-
-        }while(option4==1);
-
-
-
-
-        List<Car> cars = loadCarsFromFile("cars-data.json");
+        List<Car> cars = loadDataFromFile("cars-data.json");
         Menu menu = new Menu(cars);
         menu.startApplication();
     }
 
     // Method to load cars from the JSON file (in resources)
-    private static List<Car> loadCarsFromFile(String fileName) {
+    private static List<Car> loadDataFromFile(String fileName) {
         try (InputStreamReader reader = new InputStreamReader(Menu.class.getClassLoader().getResourceAsStream(fileName))) {
             // Create a Gson object to parse the JSON
             Gson gson = new Gson();
             // Define the type of list to be deserialized
-            return gson.fromJson(reader, new TypeToken<List<Car>>(){}.getType());
+            return gson.fromJson(reader, new TypeToken<List<Car>>() {
+            }.getType());
         } catch (IOException e) {
             e.printStackTrace();
             return null;
         }
     }
-
 }
