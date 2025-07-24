@@ -25,15 +25,15 @@ public class Menu {
 
     private void printMainMenu() {
         System.out.println("\n=== Menú Principal ===");
-        System.out.println("1. Mostrar carros disponibles");
+        System.out.println("1. Mostrar Vehículos disponibles");
         System.out.println("2. Mostrar compras");
         System.out.println("3. Salir");
     }
 
     private void printCarMenu() {
-        System.out.println("\n=== Menú Carros ===");
-        System.out.println("1. Ver detalles de carro");
-        System.out.println("2. Comprar carro");
+        System.out.println("\n=== Menú Vehículo ===");
+        System.out.println("1. Ver detalles de Vehículo");
+        System.out.println("2. Comprar Vehículo");
         System.out.println("3. Volver al menú principal");
     }
 
@@ -44,7 +44,7 @@ public class Menu {
     }
 
     private void showCarsStockAvailable() {
-        System.out.println("----- CARS AVAILABLE -----");
+        System.out.println("----- Vehículos disponibles -----");
         int count = 1;
         boolean found = false;
 
@@ -58,7 +58,7 @@ public class Menu {
         }
 
         if (!found) {
-            System.out.println("No hay autos disponibles en stock.");
+            System.out.println("No hay Vehículos disponibles en stock.");
         }
 
         System.out.println("----------------------------");
@@ -93,7 +93,7 @@ public class Menu {
     }
 
     private void showCarDetails() {
-        System.out.print("Ingrese el número del carro para ver los detalles: ");
+        System.out.print("Ingrese el número del Vehículo para ver los detalles: ");
         int carNumber = Integer.parseInt(scanner.nextLine());
 
         // Restamos 1 para que la selección del usuario (que comienza en 1) coincida con los índices de la lista
@@ -101,15 +101,15 @@ public class Menu {
             Car car = this.availableCars.get(carNumber - 1);  // Restamos 1 al número ingresado
             car.showInfo();  // Muestra la información completa del carro
         } else {
-            System.out.println("Carro no válido.");
+            System.out.println("Opcion no válida.");
         }
     }
 
     private void buyCar() {
 
-        System.out.println("----- Comprar Carro -----");
+        System.out.println("----- Comprar Vehículo -----");
 
-        System.out.print("Ingrese el número del carro que desea comprar: ");
+        System.out.print("Indique el número del vehículo deseado: ");
         int carNumber = Integer.parseInt(scanner.nextLine());
 
         if (carNumber > 0 && carNumber <= this.availableCars.size()) {
@@ -124,10 +124,10 @@ public class Menu {
             history.addPurchase(receipt);
 
             car.decreaseStock();
-            System.out.println("¡Compra exitosa! El carro " + car.getModel() + " ha sido adquirido.");
+            System.out.println("¡Compra exitosa! El Vehículo " + car.getModel() + " ha sido adquirido.");
 
         } else {
-            System.out.println("Carro no válido.");
+            System.out.println("Opcion no válida.");
         }
     }
 

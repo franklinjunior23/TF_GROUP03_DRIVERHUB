@@ -24,7 +24,7 @@ public class Receipt {
         System.out.println("DNI: " + customer.getDni());
         System.out.println("Teléfono: " + customer.getPhoneNumber());
         System.out.println("----------------------------");
-        System.out.println("Carro comprado: " + car.getModel() + " " + car.getModel() + " (" + car.getYear() + ")");
+        System.out.println("Vehículo adquirido: " + car.getModel() + " " + car.getModel() + " (" + car.getYear() + ")");
         System.out.println("Precio: $" + car.getPrice());
         System.out.println("----------------------------");
     }
