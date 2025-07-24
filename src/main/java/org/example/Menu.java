@@ -8,6 +8,7 @@ public class Menu {
     private List<Car> cars;
     private List<Car> availableCars;
     private Scanner scanner;
+    private PurchaseHistory history = new PurchaseHistory();
 
     public Menu(List<Car> cars) {
         this.cars = cars;
@@ -50,7 +51,7 @@ public class Menu {
         for (Car car : this.availableCars) {
             if (car.getStock() > 0) {
                 System.out.print(count + ". ");
-                car.showInfoBasic();  // Asume que showInfoBasic() ya hace println
+                car.showInfoBasic();
                 count++;
                 found = true;
             }
@@ -117,7 +118,12 @@ public class Menu {
             CustomerInputHandler customerInputHandler = new CustomerInputHandler();
             Customer customer = customerInputHandler.createCustomer();
 
-            car.decreaseStock(); // Asume que decreaseStock decrementa el stock
+            Receipt receipt = new Receipt(customer, car);
+            receipt.showReceipt();
+
+            history.addPurchase(receipt);
+
+            car.decreaseStock();
             System.out.println("¡Compra exitosa! El carro " + car.getModel() + " ha sido adquirido.");
 
         } else {
@@ -152,9 +158,7 @@ public class Menu {
 
     private void showPurchaseHistory() {
         System.out.println("----- Historial de Compras -----");
-        // Aquí deberías mostrar el historial de compras, lo cual depende de cómo lo tengas implementado
-        // Por ejemplo, si tienes una lista de compras realizadas, la recorrerías aquí.
-        System.out.println("No hay historial de compras disponible.");
+        history.showHistory();
         System.out.println("-------------------------------");
     }
 
